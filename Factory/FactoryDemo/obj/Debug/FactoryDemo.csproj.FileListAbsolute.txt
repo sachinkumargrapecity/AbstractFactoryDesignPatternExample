@@ -12,3 +12,5 @@ D:\OneDrive - GrapeCity Group\repos\Factory\FactoryDemo\obj\Debug\FactoryDemo.cs
 D:\OneDrive - GrapeCity Group\repos\Factory\FactoryDemo\obj\Debug\FactoryDemo.csproj.CopyComplete
 D:\OneDrive - GrapeCity Group\repos\Factory\FactoryDemo\obj\Debug\FactoryDemo.exe
 D:\OneDrive - GrapeCity Group\repos\Factory\FactoryDemo\obj\Debug\FactoryDemo.pdb
+D:\OneDrive - GrapeCity Group\repos\Factory\FactoryDemo\bin\Debug\SingletonWriteLine.dll
+D:\OneDrive - GrapeCity Group\repos\Factory\FactoryDemo\bin\Debug\SingletonWriteLine.pdb

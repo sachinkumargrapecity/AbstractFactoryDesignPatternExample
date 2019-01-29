@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AbstractFactory.Factory;
 using AbstractFactoryImplementation.Factory;
+using SingletonWriteLine;
 
 namespace FactoryDemo
 {
@@ -13,11 +14,11 @@ namespace FactoryDemo
     {
         static void Main(string[] args)
         {
-            SingletonConsoleWrite SCW = SingletonConsoleWrite.GetConsoleWrite;
+            SingletonWriter SCW = SingletonWriter.GetConsoleWrite;
 
             char choice = 'm';
             IVehicles vehicles = null;
-
+            
             SCW.Write("Enter m for motored vechicle and n for non motored vechile");
             try
             {
@@ -53,7 +54,10 @@ namespace FactoryDemo
 
             if (vehicles != null)
             {
-               SCW.Write(vehicles.Create(wheels).ToString());
+                string vehicle = vehicles.Create(wheels).ToString();
+                SCW.Write(vehicle);
+                if(!vehicle.Contains("cannot be made in our factory"))
+                    SCW.Write(choice,wheels);
             }
 
             Console.ReadKey();

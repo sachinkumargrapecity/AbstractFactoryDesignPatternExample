@@ -1,0 +1,6 @@
+D:\OneDrive - GrapeCity Group\repos\Factory\SingletonWriteLine\bin\Debug\SingletonWriteLine.dll
+D:\OneDrive - GrapeCity Group\repos\Factory\SingletonWriteLine\bin\Debug\SingletonWriteLine.pdb
+D:\OneDrive - GrapeCity Group\repos\Factory\SingletonWriteLine\obj\Debug\SingletonWriteLine.csprojAssemblyReference.cache
+D:\OneDrive - GrapeCity Group\repos\Factory\SingletonWriteLine\obj\Debug\SingletonWriteLine.csproj.CoreCompileInputs.cache
+D:\OneDrive - GrapeCity Group\repos\Factory\SingletonWriteLine\obj\Debug\SingletonWriteLine.dll
+D:\OneDrive - GrapeCity Group\repos\Factory\SingletonWriteLine\obj\Debug\SingletonWriteLine.pdb

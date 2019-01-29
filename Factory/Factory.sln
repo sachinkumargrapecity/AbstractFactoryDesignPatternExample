@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactoryImplementati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractVehicleFactory", "AbstractVehicleFactory\AbstractVehicleFactory.csproj", "{173CEC4A-B2A6-4A30-BA0B-15FDFCD6CC84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonWriteLine", "SingletonWriteLine\SingletonWriteLine.csproj", "{A655274B-B9CA-431B-8D1C-C73E93E3F624}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{173CEC4A-B2A6-4A30-BA0B-15FDFCD6CC84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{173CEC4A-B2A6-4A30-BA0B-15FDFCD6CC84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{173CEC4A-B2A6-4A30-BA0B-15FDFCD6CC84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A655274B-B9CA-431B-8D1C-C73E93E3F624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A655274B-B9CA-431B-8D1C-C73E93E3F624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A655274B-B9CA-431B-8D1C-C73E93E3F624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A655274B-B9CA-431B-8D1C-C73E93E3F624}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
