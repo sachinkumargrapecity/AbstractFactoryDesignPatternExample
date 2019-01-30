@@ -65,6 +65,10 @@ namespace FactoryDemo
                 {
                     logger.Write(e.Message);
                 }
+                catch(Exception e)
+                {
+                    logger.Write("An Error Occurred");
+                }
 
             }
 
