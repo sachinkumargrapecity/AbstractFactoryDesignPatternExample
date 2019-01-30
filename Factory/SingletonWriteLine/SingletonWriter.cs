@@ -5,7 +5,7 @@ namespace SingletonWriteLine
     /// <summary>
     /// REVIEW: There is no need to name it like this, simple 'Logger' would have sufficed.
     /// </summary>
-    public class SingletonWriter
+    public sealed class SingletonWriter
     {
         private static readonly Lazy<SingletonWriter> ConsoleWriter = new Lazy<SingletonWriter>(() => new SingletonWriter(), true);
 
