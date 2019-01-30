@@ -9,6 +9,9 @@ using AbstractVehicleFactory.Model;
 
 namespace AbstractFactoryImplementation.Factory
 {
+    /// <summary>
+    /// #REVIEW: Avoid unused namespaces. VS 2017 -> ctrl+R,G.
+    /// </summary>
     public class MotoredVehicleFactory : IMotored
     {
         public Vehicle Create(int wheels)

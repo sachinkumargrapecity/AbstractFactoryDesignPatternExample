@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using AbstractFactory.Factory;
 using AbstractFactoryImplementation.Factory;
 using SingletonWriteLine;
-
+// #REVIEW: Unused namespaces, VS 2017 -> ctrl+R,G.
 namespace FactoryDemo
 {
     class Program
@@ -30,10 +30,13 @@ namespace FactoryDemo
             }
 
             int wheels = 0;
+
+            //#REVIEW: Since we have abstracted console writing,
+            // It makes sense to handle exceptions inside SCW and not here.
             try
             {
                 SCW.Write("Enter the number of wheels needed");
-                wheels = Convert.ToInt32(Console.ReadLine().Trim());
+                wheels = Convert.ToInt32(Console.ReadLine().Trim()); // #REVIEW: +1 for using trim.
             }
             catch (Exception)
             {
@@ -52,15 +55,33 @@ namespace FactoryDemo
                     break;
             }
 
+            // #REVIEW: +1 for Defensive programming (null check). Will save you lots of trouble. Highly encourage this.
             if (vehicles != null)
             {
+                // #REVIEW: Converting to strings should be implemented by encapsulation in the abstraction
+                // of logger that you created. Console project should not have the responsibility to convert to strings
+                // Converting to strings in the console project should only be done for specific cases when our 
+                // abstraction(logger) is not able to convert to strings.
                 string vehicle = vehicles.Create(wheels).ToString();
                 SCW.Write(vehicle);
                 if(!vehicle.Contains("cannot be made in our factory"))
-                    SCW.Write(choice,wheels);
+                    SCW.Write(choice,wheels); // #REVIEW: This is not formatted. VS 2017 -> ctrl+K+D, VS Code -> alt+Shift+F 
+
+                //if (!vehicle.Contains("cannot be made in our factory"))
+                // #REVIEW: This line is not elegant at all. 
+                // Not maintainable too, what if the message changes in future? This is the first thing to break.
+                // Setting a flag in case the vehicle is not valid and checking the flag is a much elegant way.
             }
 
             Console.ReadKey();
+
+            /* #REVIEW: Other comments: Really liked the way you have kept models internal.
+             * Although in a full time real project you will need to keep it public since it has to be referenced elsewhere.
+             * But in this specific project we are just using strings and no object parameter is used therefore
+             * keeping them internal makes sense.
+             * Minimum exposure to classes and their members is a good practice.
+             * +1 for that.
+            */
         }
     }
 }

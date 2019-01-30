@@ -19,6 +19,6 @@ namespace AbstractFactoryImplementation.Factory
                 default: return new NoNonMotoredVechile(wheels);
             }
         }
-        
+        // #REVIEW: Extra line not needed. ctrl+Shift+Delete OR ctrl+L
     }
 }
