@@ -1,6 +1,6 @@
 ﻿namespace AbstractFactoryImplementation.Model.NonMotor
 {
-    class TricycleModel : AbstractVehicleFactory.Model.Vehicle
+    class TricycleModel : AbstractVehicleFactory.Model.VehicleModel
     {
         public override string ToString()
         {

@@ -11,11 +11,9 @@ namespace FactoryDemo
         static void Main(string[] args)
         {
             Logger logger = Logger.GetConsoleWrite;
-
             char choice = 'm';
-            IVehicle vehicle = null; 
-
             logger.Write("Enter m for motored vechicle and n for non motored vechile");
+
             try
             {
                 choice = Console.ReadLine().Trim().ToCharArray()[0];
@@ -25,9 +23,9 @@ namespace FactoryDemo
                 logger.Write("An Error Occurred");
             }
 
+            logger.Write("Enter the number of wheels needed");
             int wheels = 0;
 
-            logger.Write("Enter the number of wheels needed");
             try
             {
                 wheels = Convert.ToInt32(Console.ReadLine().Trim()); // #REVIEW: +1 for using trim.
@@ -36,6 +34,8 @@ namespace FactoryDemo
             {
                 logger.Write("An Error Occurred");
             }
+
+            IVehicleFactory vehicle = null; 
 
             switch (choice)
             {
@@ -69,7 +69,6 @@ namespace FactoryDemo
                 {
                     logger.Write("An Error Occurred");
                 }
-
             }
 
             Console.ReadKey();

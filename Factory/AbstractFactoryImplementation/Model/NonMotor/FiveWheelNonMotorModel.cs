@@ -1,6 +1,6 @@
 ﻿namespace AbstractFactoryImplementation.Model.NonMotor
 {
-    class FiveWheelNonMotorModel : AbstractVehicleFactory.Model.Vehicle
+    class FiveWheelNonMotorModel : AbstractVehicleFactory.Model.VehicleModel
     {
         public override string ToString()
         {

@@ -5,9 +5,9 @@ using AbstractVehicleFactory.Model;
 
 namespace AbstractFactoryImplementation.Factory
 {
-    public class MotoredVehicleFactory : IVehicle
+    public class MotoredVehicleFactory : IVehicleFactory
     {
-        public Vehicle Create(int wheels)
+        public VehicleModel Create(int wheels)
         {
             switch (wheels)
             {

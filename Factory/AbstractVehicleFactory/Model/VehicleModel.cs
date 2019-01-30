@@ -1,6 +1,6 @@
 ﻿namespace AbstractVehicleFactory.Model
 {
-    public abstract class Vehicle
+    public abstract class VehicleModel
     {
 
     }
