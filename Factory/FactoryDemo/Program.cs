@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AbstractFactory.Factory;
+﻿using AbstractFactory.Factory;
 using AbstractFactoryImplementation.Factory;
 using SingletonWriteLine;
+using System;
 // #REVIEW: Unused namespaces, VS 2017 -> ctrl+R,G.
 namespace FactoryDemo
 {
@@ -18,7 +13,7 @@ namespace FactoryDemo
 
             char choice = 'm';
             IVehicles vehicles = null;
-            
+
             SCW.Write("Enter m for motored vechicle and n for non motored vechile");
             try
             {
@@ -33,9 +28,9 @@ namespace FactoryDemo
 
             //#REVIEW: Since we have abstracted console writing,
             // It makes sense to handle exceptions inside SCW and not here.
+            SCW.Write("Enter the number of wheels needed");
             try
             {
-                SCW.Write("Enter the number of wheels needed");
                 wheels = Convert.ToInt32(Console.ReadLine().Trim()); // #REVIEW: +1 for using trim.
             }
             catch (Exception)
@@ -43,15 +38,18 @@ namespace FactoryDemo
                 Console.WriteLine("An Error Occurred");
             }
 
-            switch(choice)
+            switch (choice)
             {
                 case 'm':
-                case 'M': vehicles = new MotoredVehicleFactory();
+                case 'M':
+                    vehicles = new MotoredVehicleFactory();
                     break;
                 case 'n':
-                case 'N': vehicles = new NonMotoredVehicleFactory();
+                case 'N':
+                    vehicles = new NonMotoredVehicleFactory();
                     break;
-                default: SCW.Write("Not A valid Vehicle Type");
+                default:
+                    SCW.Write("Not A valid Vehicle Type");
                     break;
             }
 
@@ -62,10 +60,21 @@ namespace FactoryDemo
                 // of logger that you created. Console project should not have the responsibility to convert to strings
                 // Converting to strings in the console project should only be done for specific cases when our 
                 // abstraction(logger) is not able to convert to strings.
-                string vehicle = vehicles.Create(wheels).ToString();
-                SCW.Write(vehicle);
-                if(!vehicle.Contains("cannot be made in our factory"))
-                    SCW.Write(choice,wheels); // #REVIEW: This is not formatted. VS 2017 -> ctrl+K+D, VS Code -> alt+Shift+F 
+                var vehicle = vehicles.Create(wheels);
+                
+                if (vehicle == null && choice == 'n')
+                {
+                    SCW.Write($"Non-motored vehicles with {wheels} wheels cannot be made in our factory."); // #REVIEW: This is not formatted. VS 2017 -> ctrl+K+D, VS Code -> alt+Shift+F 
+                }
+                else if (vehicle == null)
+                {
+                    SCW.Write($"Motored vehicles with {wheels} wheels cannot be made in our factory.");
+                }
+                else
+                {
+                    SCW.Write(vehicle);
+                    SCW.Write(choice,wheels);
+                }
 
                 //if (!vehicle.Contains("cannot be made in our factory"))
                 // #REVIEW: This line is not elegant at all. 

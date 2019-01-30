@@ -4,7 +4,7 @@ using AbstractVehicleFactory.Model;
 
 namespace AbstractFactoryImplementation.Factory
 {
-    public class NonMotoredVehicleFactory : INonMotored
+    public class NonMotoredVehicleFactory : IVehicle
     {
         public Vehicle Create(int wheels)
         {
@@ -16,9 +16,8 @@ namespace AbstractFactoryImplementation.Factory
                 case 4: return new FourWheelCartModel();
                 case 5: return new FiveWheelNonMotorModel();
                 case 6: return new SixWheelCycleModel();
-                default: return new NoNonMotoredVechile(wheels);
+                default: return null;
             }
-        }
-        // #REVIEW: Extra line not needed. ctrl+Shift+Delete OR ctrl+L
+        }// #REVIEW: Extra line not needed. ctrl+Shift+Delete OR ctrl+L
     }
 }

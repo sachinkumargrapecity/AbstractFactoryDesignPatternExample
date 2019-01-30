@@ -19,7 +19,7 @@ namespace SingletonWriteLine
             Console.WriteLine("Number of wheels: " + wheels);
         }
 
-        public void Write(string message)
+        public void Write(Object message)
         {
             Console.WriteLine(message);
         }
@@ -37,12 +37,23 @@ namespace SingletonWriteLine
         {
             // #REVIEW: You could have used a switch statement instead of if/else-if, more elegant than this.
             // #REVIEW: When comparing strings string.Compare(type, 'm', StringComparison.OrdinalIgnoreCase) will be useful if case has to be ignored.
-            if (type == 'm') return "Motored";
-            else if (type == 'n') return "Non Motored";
-            else
+            switch (type)
             {
-                return ""; // REVIEW: Never use "" for empty string, use string.Empty
+                case 'm':
+                case 'M':
+                    return "Motored";
+                case 'n':
+                case 'N':
+                    return "Non Motored";
+                default:
+                    return string.Empty;
             }
+            //if (type == 'm') return "Motored";
+            //else if (type == 'n') return "Non Motored";
+            //else
+            //{
+            //    return string.Empty; // REVIEW: Never use "" for empty string, use string.Empty
+            //}
         }
     }
 }

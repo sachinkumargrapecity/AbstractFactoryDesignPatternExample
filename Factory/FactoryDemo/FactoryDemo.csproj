@@ -54,10 +54,6 @@
       <Project>{8b943b0f-f0eb-4338-b4a5-f9eba715d413}</Project>
       <Name>AbstractFactoryImplementation</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AbstractFactory\AbstractFactory.csproj">
-      <Project>{710F83FD-3BDF-41AA-B886-01429C7848F6}</Project>
-      <Name>AbstractFactory</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AbstractVehicleFactory\AbstractVehicleFactory.csproj">
       <Project>{173cec4a-b2a6-4a30-ba0b-15fdfcd6cc84}</Project>
       <Name>AbstractVehicleFactory</Name>

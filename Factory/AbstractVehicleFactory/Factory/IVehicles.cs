@@ -10,7 +10,7 @@ namespace AbstractFactory.Factory
     /// Later if you are interested you can even remove that switch statement by 'Strategy Pattern'.
     /// This is optional read it if interested.
     /// </summary>
-    public interface IVehicles
+    public interface IVehicle
     {
         Vehicle Create(int wheels);
     }

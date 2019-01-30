@@ -46,22 +46,16 @@
     <Compile Include="Model\Motor\AutoModel.cs" />
     <Compile Include="Model\Motor\BikeModel.cs" />
     <Compile Include="Model\Motor\CarModel.cs" />
-    <Compile Include="Model\Motor\NoVehicleOfThatWheelNumber.cs" />
     <Compile Include="Model\Motor\PickUpModel.cs" />
     <Compile Include="Model\NonMotor\BicycleModel.cs" />
     <Compile Include="Model\NonMotor\FiveWheelNonMotorModel.cs" />
     <Compile Include="Model\NonMotor\FourWheelCartModel.cs" />
-    <Compile Include="Model\NonMotor\NoNonMotoredVechile.cs" />
     <Compile Include="Model\NonMotor\OneWheelCycleModel.cs" />
     <Compile Include="Model\NonMotor\SixWheelCycleModel.cs" />
     <Compile Include="Model\NonMotor\TricycleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AbstractFactory\AbstractFactory.csproj">
-      <Project>{710f83fd-3bdf-41aa-b886-01429c7848f6}</Project>
-      <Name>AbstractFactory</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AbstractVehicleFactory\AbstractVehicleFactory.csproj">
       <Project>{173CEC4A-B2A6-4A30-BA0B-15FDFCD6CC84}</Project>
       <Name>AbstractVehicleFactory</Name>
