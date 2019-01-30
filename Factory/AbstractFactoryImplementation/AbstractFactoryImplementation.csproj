@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\NoVehicleFoundException.cs" />
     <Compile Include="Factory\MotoredVehicleFactory.cs" />
     <Compile Include="Factory\NonMotoredVehicleFactory.cs" />
     <Compile Include="Model\Motor\AutoModel.cs" />

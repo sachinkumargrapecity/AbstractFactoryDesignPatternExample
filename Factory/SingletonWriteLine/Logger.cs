@@ -1,17 +1,17 @@
 ﻿using System;
 
-namespace SingletonWriteLine
+namespace LoggerSpace
 {
     /// <summary>
     /// #REVIEW: There is no need to name it like this, simple 'Logger' would have sufficed.
     /// </summary>
-    public sealed class SingletonWriter
+    public sealed class Logger
     {
-        private static readonly Lazy<SingletonWriter> ConsoleWriter = new Lazy<SingletonWriter>(() => new SingletonWriter(), true);
+        private static readonly Lazy<Logger> ConsoleWriter = new Lazy<Logger>(() => new Logger(), true);
 
-        private SingletonWriter() { }
+        private Logger() { }
 
-        public static SingletonWriter GetConsoleWrite { get; } = ConsoleWriter.Value;
+        public static Logger GetConsoleWrite { get; } = ConsoleWriter.Value;
 
         public void Write(char type, int wheels)
         {

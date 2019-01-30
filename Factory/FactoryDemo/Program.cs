@@ -1,6 +1,6 @@
 ﻿using AbstractFactory.Factory;
 using AbstractFactoryImplementation.Factory;
-using SingletonWriteLine;
+using LoggerSpace;
 using System;
 
 namespace FactoryDemo
@@ -9,10 +9,10 @@ namespace FactoryDemo
     {
         static void Main(string[] args)
         {
-            SingletonWriter SCW = SingletonWriter.GetConsoleWrite;
+            Logger SCW = Logger.GetConsoleWrite;
 
             char choice = 'm';
-            IVehicles vehicles = null; // #REVIEW: Use plural naming when you have a collection of items not for single item.
+            IVehicle vehicles = null; // #REVIEW: Use plural naming when you have a collection of items not for single item.
 
             SCW.Write("Enter m for motored vechicle and n for non motored vechile");
             try
@@ -34,7 +34,7 @@ namespace FactoryDemo
             catch (Exception)
             {
                 // #REVIEW: Use your version of logger. Do not write to console directly.
-                Console.WriteLine("An Error Occurred");
+                SCW.Write("An Error Occurred");
             }
 
             switch (choice)
@@ -55,26 +55,15 @@ namespace FactoryDemo
             // #REVIEW: +1 for Defensive programming (null check). Will save you lots of trouble. Highly encourage this.
             if (vehicles != null)
             {
-                var vehicle = vehicles.Create(wheels);
-                
-                // #REVIEW: what if choice is 'N'?
-                // #REVIEW: Not an elegant way to handle this scenario.
-                /*
-                 * Why can't both factories raise a custom exception when no.of wheels are not supported
-                 * and the exception message can be logged in via the logger.
-                 */
-                if (vehicle == null && choice == 'n')
+                try
                 {
-                    SCW.Write($"Non-motored vehicles with {wheels} wheels cannot be made in our factory.");
-                }
-                else if (vehicle == null)
-                {
-                    SCW.Write($"Motored vehicles with {wheels} wheels cannot be made in our factory.");
-                }
-                else
-                {
+                    var vehicle = vehicles.Create(wheels);
                     SCW.Write(vehicle);
-                    SCW.Write(choice,wheels); // #REVIEW: This line is not formatted.
+                    SCW.Write(choice, wheels);
+                }
+                catch(Exception e)
+                {
+                    SCW.Write(e.Message);
                 }
 
             }

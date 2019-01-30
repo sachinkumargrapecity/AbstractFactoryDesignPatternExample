@@ -1,4 +1,5 @@
 ﻿using AbstractFactory.Factory;
+using AbstractFactoryImplementation.Exceptions;
 using AbstractFactoryImplementation.Model.Motor;
 using AbstractVehicleFactory.Model;
 
@@ -14,7 +15,7 @@ namespace AbstractFactoryImplementation.Factory
                 case 3: return new AutoModel();
                 case 4: return new CarModel();
                 case 6: return new PickUpModel();
-                default: return null;
+                default: throw new NoVehicleFoundException($"Motored vehicles with {wheels} wheels cannot be made in our factory.");
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using AbstractFactory.Factory;
+using AbstractFactoryImplementation.Exceptions;
 using AbstractFactoryImplementation.Model.NonMotor;
 using AbstractVehicleFactory.Model;
 
@@ -16,7 +17,7 @@ namespace AbstractFactoryImplementation.Factory
                 case 4: return new FourWheelCartModel();
                 case 5: return new FiveWheelNonMotorModel();
                 case 6: return new SixWheelCycleModel();
-                default: return null;
+                default: throw new NoVehicleFoundException($"Non-motored vehicles with {wheels} wheels cannot be made in our factory.");
             }
         }
     }
