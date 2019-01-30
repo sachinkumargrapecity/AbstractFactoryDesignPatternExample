@@ -55,10 +55,6 @@ namespace FactoryDemo
             // #REVIEW: +1 for Defensive programming (null check). Will save you lots of trouble. Highly encourage this.
             if (vehicles != null)
             {
-                // #REVIEW: Converting to strings should be implemented by encapsulation in the abstraction
-                // of logger that you created. Console project should not have the responsibility to convert to strings
-                // Converting to strings in the console project should only be done for specific cases when our 
-                // abstraction(logger) is not able to convert to strings.
                 var vehicle = vehicles.Create(wheels);
                 
                 // #REVIEW: This condition is contradictory. We already have defended against vehicle being null. How will vehicle then be null.
