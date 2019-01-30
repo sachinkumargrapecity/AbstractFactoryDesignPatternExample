@@ -2,9 +2,6 @@
 
 namespace LoggerSpace
 {
-    /// <summary>
-    /// #REVIEW: There is no need to name it like this, simple 'Logger' would have sufficed.
-    /// </summary>
     public sealed class Logger
     {
         private static readonly Lazy<Logger> ConsoleWriter = new Lazy<Logger>(() => new Logger(), true);

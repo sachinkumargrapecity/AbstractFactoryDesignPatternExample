@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AbstractFactoryImplementation.Exceptions
 {
-    class NoVehicleFoundException : Exception
+    public class NoVehicleFoundException : Exception
     {
         public NoVehicleFoundException(string message) : base (message)
         {}
