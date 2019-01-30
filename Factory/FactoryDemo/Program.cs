@@ -12,7 +12,7 @@ namespace FactoryDemo
             SingletonWriter SCW = SingletonWriter.GetConsoleWrite;
 
             char choice = 'm';
-            IVehicles vehicles = null;
+            IVehicles vehicles = null; // #REVIEW: Use plural naming when you have a collection of items not for single item.
 
             SCW.Write("Enter m for motored vechicle and n for non motored vechile");
             try
@@ -57,9 +57,12 @@ namespace FactoryDemo
             {
                 var vehicle = vehicles.Create(wheels);
                 
-                // #REVIEW: This condition is contradictory. We already have defended against vehicle being null. How will vehicle then be null.
-                // This condition is always false.
-                // #REVIEW: Setting a flag in case the vehicle is not valid and checking the flag is a much elegant way to get the correct message.
+                // #REVIEW: what if choice is 'N'?
+                // #REVIEW: Not an elegant way to handle this scenario.
+                /*
+                 * Why can't both factories raise a custom exception when no.of wheels are not supported
+                 * and the exception message can be logged in via the logger.
+                 */
                 if (vehicle == null && choice == 'n')
                 {
                     SCW.Write($"Non-motored vehicles with {wheels} wheels cannot be made in our factory.");
@@ -71,7 +74,7 @@ namespace FactoryDemo
                 else
                 {
                     SCW.Write(vehicle);
-                    SCW.Write(choice,wheels); // #REVIEW: This line is not formatted
+                    SCW.Write(choice,wheels); // #REVIEW: This line is not formatted.
                 }
 
             }
