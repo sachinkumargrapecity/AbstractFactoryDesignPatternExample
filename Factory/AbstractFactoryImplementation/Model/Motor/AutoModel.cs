@@ -1,5 +1,4 @@
-﻿// #REVIEW: Unused Namespaces in all entities
-namespace AbstractFactoryImplementation.Model.Motor
+﻿namespace AbstractFactoryImplementation.Model.Motor
 {
     class AutoModel : AbstractVehicleFactory.Model.Vehicle
     {

@@ -18,6 +18,6 @@ namespace AbstractFactoryImplementation.Factory
                 case 6: return new SixWheelCycleModel();
                 default: return null;
             }
-        }// #REVIEW: Extra line not needed. ctrl+Shift+Delete OR ctrl+L
+        }
     }
 }

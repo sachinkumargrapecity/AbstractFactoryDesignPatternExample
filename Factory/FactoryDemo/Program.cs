@@ -2,7 +2,7 @@
 using AbstractFactoryImplementation.Factory;
 using SingletonWriteLine;
 using System;
-// #REVIEW: Unused namespaces, VS 2017 -> ctrl+R,G.
+
 namespace FactoryDemo
 {
     class Program
@@ -26,8 +26,6 @@ namespace FactoryDemo
 
             int wheels = 0;
 
-            //#REVIEW: Since we have abstracted console writing,
-            // It makes sense to handle exceptions inside SCW and not here.
             SCW.Write("Enter the number of wheels needed");
             try
             {
@@ -35,6 +33,7 @@ namespace FactoryDemo
             }
             catch (Exception)
             {
+                // #REVIEW: Use your version of logger. Do not write to console directly.
                 Console.WriteLine("An Error Occurred");
             }
 
@@ -62,9 +61,12 @@ namespace FactoryDemo
                 // abstraction(logger) is not able to convert to strings.
                 var vehicle = vehicles.Create(wheels);
                 
+                // #REVIEW: This condition is contradictory. We already have defended against vehicle being null. How will vehicle then be null.
+                // This condition is always false.
+                // #REVIEW: Setting a flag in case the vehicle is not valid and checking the flag is a much elegant way to get the correct message.
                 if (vehicle == null && choice == 'n')
                 {
-                    SCW.Write($"Non-motored vehicles with {wheels} wheels cannot be made in our factory."); // #REVIEW: This is not formatted. VS 2017 -> ctrl+K+D, VS Code -> alt+Shift+F 
+                    SCW.Write($"Non-motored vehicles with {wheels} wheels cannot be made in our factory.");
                 }
                 else if (vehicle == null)
                 {
@@ -73,13 +75,9 @@ namespace FactoryDemo
                 else
                 {
                     SCW.Write(vehicle);
-                    SCW.Write(choice,wheels);
+                    SCW.Write(choice,wheels); // #REVIEW: This line is not formatted
                 }
 
-                //if (!vehicle.Contains("cannot be made in our factory"))
-                // #REVIEW: This line is not elegant at all. 
-                // Not maintainable too, what if the message changes in future? This is the first thing to break.
-                // Setting a flag in case the vehicle is not valid and checking the flag is a much elegant way.
             }
 
             Console.ReadKey();
